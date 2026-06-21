@@ -70,3 +70,43 @@ export interface DashboardStats {
   recentOrders: Order[];
   topProducts: Product[];
 }
+
+export type SurvivorRole = 'idle' | 'gather' | 'guard' | 'heal';
+
+export interface SurvivorSkills {
+  gather: number;
+  guard: number;
+  heal: number;
+}
+
+export interface Survivor {
+  id: number;
+  name: string;
+  avatar: string;
+  role: SurvivorRole;
+  health: number;
+  stamina: number;
+  morale: number;
+  skills: SurvivorSkills;
+  injured: boolean;
+  joinedAt: string;
+}
+
+export interface RoleInfo {
+  name: string;
+  icon: string;
+  desc: string;
+}
+
+export interface GameResources {
+  food: number;
+  water: number;
+  wood: number;
+  stone: number;
+}
+
+export interface LogMessage {
+  time: string;
+  content: string;
+  type: 'info' | 'success' | 'warning' | 'danger';
+}
